@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Vaccine Slot</title>
+    <link rel="stylesheet" href="Slot_book.css">
+</head>
+<body>
+    <img src="logo2-removebg-preview.png" width="120px" height="120px">
+    <h1>Book a Vaccine Slot</h1>
+    <div class="container">
+        <form id="bookingForm" action="Slot_book.php" method="POST">
+            <input type="hidden" id="hospital" name="hospital" value="">
+
+            <label>Full name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="hospitalSelect">Select Hospital:</label>
+            <select id="hospitalSelect" name="hospitalSelect" onchange="updateHiddenInputAndVaccines(this)">
+                <option value="hospital1">Hospital 1</option>
+                <option value="hospital2">Hospital 2</option>
+                <option value="hospital3">Hospital 3</option>
+            </select>
+        
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+        
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+        
+            <label for="vaccineSelect">Select Vaccine:</label>
+            <select id="vaccineSelect" name="vaccineSelect" required>
+                <option value="" disabled selected>Select a Hospital first</option>
+            </select>
+        
+            <button type="submit">Book Slot</button>
+        </form>    
+    </div>
+
+    <script>
+        function updateHiddenInputAndVaccines(select) {
+            const hiddenInput = document.getElementById('hospital');
+            hiddenInput.value = select.value;
+    
+            const vaccineSelect = document.getElementById('vaccineSelect');
+            vaccineSelect.innerHTML = ""; 
+    
+            const selectedHospital = select.value;
+            const vaccineOptions = getVaccineOptions(selectedHospital); 
+    
+            vaccineOptions.forEach(option => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option;
+                optionElement.textContent = option;
+                vaccineSelect.appendChild(optionElement);
+            });
+        }
+    
+        function getVaccineOptions(hospital) {
+         
+            const vaccineOptionsByHospital = {
+                hospital1: ["Vaccine A", "Vaccine B"],
+                hospital2: ["Vaccine X", "Vaccine Y", "Vaccine Z"],
+                hospital3: ["Vaccine M", "Vaccine N"],
+            };
+    
+            return vaccineOptionsByHospital[hospital] || [];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Slot</title>
+    <link rel="stylesheet" href="Book_slot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <img src="logo2-removebg-preview.png" alt="Neo-Vax-Lab">
+            </div>
+            
+            <div class="home">
+               <a href="homepage.html"> <button>Home</button></a>
+            </div>
+            <div class="chart">
+                <a href="chart.html"><button>Chart</button></a>
+            </div>
+            <div class="contact">
+              <a href="contact.html">  <button>Contact</button></a>
+            </div>
+            <div class="login">
+                <a href="login.html"><button>Login</button></a>
+            </div>
+            <div class="About">
+                <a href="about.html"><button>About</button></a>
+                
+            </div>
+        </div>
+        <img src="logo2-removebg-preview.png" width="120px" height="120px">
+    <div class="container">
+        <h1>Book a Vaccine Slot</h1>
+        <form id="bookingForm" action="Slot_book.php" method="POST">
+            <input type="hidden" id="hospital" name="hospital" value="">
+
+            <label>Full name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="hospitalSelect">Select Hospital:</label>
+            <select id="hospitalSelect" name="hospitalSelect" onchange="updateHiddenInputAndVaccines(this)">
+                <option value="hospital1">Hospital 1</option>
+                <option value="hospital2">Hospital 2</option>
+                <option value="hospital3">Hospital 3</option>
+            </select>
+        
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+        
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+        
+            <label for="vaccineSelect">Select Vaccine:</label>
+            <select id="vaccineSelect" name="vaccineSelect" required>
+                <option value="" disabled selected>Select a Hospital first</option>
+            </select>
+             <button class="open-button" onclick="openForm()">Submit</button>
+            </form>
+              <div class="form-popup" id="myForm">
+                  <h1>Appointment Scheduled</h1>
+                  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              </div>
+              
+              <script>
+              function openForm() {
+                document.getElementById("myForm").style.display = "block";
+              }
+              
+              function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+              }
+              </script>
+              
+        </form>    
+    </div>
+</div>
+    <script>
+        function updateHiddenInputAndVaccines(select) {
+            const hiddenInput = document.getElementById('hospital');
+            hiddenInput.value = select.value;
+    
+            const vaccineSelect = document.getElementById('vaccineSelect');
+            vaccineSelect.innerHTML = ""; 
+    
+            const selectedHospital = select.value;
+            const vaccineOptions = getVaccineOptions(selectedHospital); 
+    
+            vaccineOptions.forEach(option => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option;
+                optionElement.textContent = option;
+                vaccineSelect.appendChild(optionElement);
+            });
+        }
+    
+        function getVaccineOptions(hospital) {
+         
+            const vaccineOptionsByHospital = {
+                hospital1: ["Vaccine A", "Vaccine B"],
+                hospital2: ["Vaccine X", "Vaccine Y", "Vaccine Z"],
+                hospital3: ["Vaccine M", "Vaccine N"],
+            };
+    
+            return vaccineOptionsByHospital[hospital] || [];
+        }
+    </script>
+        </div>
+</body>
+</html>

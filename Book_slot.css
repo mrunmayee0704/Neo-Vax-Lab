@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(210, 222, 222, 0.635);
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+.background{
+    width: 1268px;
+    height: auto;
+    position: absolute;
+    top: 0px;
+}
+.header{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    background-color: #0e2954;
+    width: 100vw; 
+    z-index:1;
+    height: 100px;
+    top: -20px;
+}
+img{
+    height: 80px;
+    width:90px;
+}
+.header button{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.014); 
+  border:0;
+  height: 80px;
+  font-size: x-large;
+  width: 100px;
+  font-family:  'Quicksand', sans-serif;
+}
+
+.header button:hover{
+    height: 80px;
+    width: 100px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-size: large;
+    color: rgb(214, 243, 250);
+    background-color: #0d1a30;
+}
+.logo{
+margin-top: 30px;
+}
+.home{
+    margin-left: 500px;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+select,
+input[type="date"],
+input[type="time"] {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+select[name="vaccineSelect"] {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+#name{
+    padding:10px;
+}
+.container {
+    max-width: 500px;
+    /* margin: 70px auto; */
+    margin-left: 350px;
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(239, 240, 243);
+}
+.container h1{
+    color: black;
+}
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    top: 520px;
+    left: 450px;
+    width: 280px;
+    z-index: 3px;
+    position: absolute;
+  }
+.form-popup {
+    display: none;
+    padding: 100px;
+    position: fixed;
+    bottom: 90px;
+    right: 410px;
+    
+    background-color: rgb(155, 199, 223);
+    border-color: black;
+    box-shadow: 2px 7px 7px 7px rgba(0, 0, 0, 0.2);
+    z-index: 9;
+  }
+  .cancel{
+    padding: 10px;
+    width: 100px;
+    left: 600px;
+  }
+ .cancel:hover {
+    background-color: red;
+  }

@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(210, 222, 222, 0.635);
+}
+body{
+    background-color: rgba(210, 222, 222, 0.078);
+}
+.wrapper{
+height: 400px;
+width: 400px;
+box-shadow:1px 1px 2px 2px gray;
+padding: 0 0 0 50px;
+margin: 150px 0 0 450px;
+font-size: x-large;
+border-radius: 30px;
+background-color: white;
+}
+.header{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    background-color: #0e2954;
+    width: 100vw; 
+    z-index:1;
+    top: 0px;
+}
+img{
+    height: 80px;
+    width:90px;
+}
+.header button{
+  color: white;
+  background-color:#0e2954; 
+  border:0;
+  font-size: x-large;
+  width: 100px;
+  font-family:  'Quicksand', sans-serif;
+}
+
+.header button:hover{
+    height: 80px;
+    width: 100px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-size: large;
+    color: rgb(214, 243, 250);
+    background-color: #0d1a30;
+}
+.home{
+    margin-left: 500px;
+}
+.logo{
+    background-color: #0e2954;
+}
+.logo img{
+    background-color: #0e2954;
+}
+.forms{
+   background-color: white;
+   margin-left: 60px;
+   position: absolute;
+}
+form{
+    background-color: white;
+}
+.head{
+    font-size:xx-large;
+    background-color: white;
+}
+input{
+    padding:10px;
+    background-color: white;
+    border-radius: 5px;
+}
+label{
+    margin-left:40px;
+    background-color: white;
+}
+.submit{
+    margin-left: 42px;
+    padding: 10px;
+    background-color:#3868b5;
+    border-color:#0E2954;
+    color:white;
+    border-radius: 7px;
+    width:100px;
+    cursor: pointer;
+}
+.submit:hover{
+    width: 120px;
+    box-shadow: 0 2px 0 1px  gray;
+    margin-left: 40px;
+}
+.signup{
+    font-size:15px;
+    margin-top:10px;
+    background-color: white;
+    cursor: pointer;
+}
+a{
+    background-color: white;
+}
+.login_logo{
+    width:150px;
+    height: 120px;
+    background-color: white;
+    padding: 0 !important;
+    /* margin: 0px !important; */
+    border:0;
+    margin-left: 70px;
+}
+
